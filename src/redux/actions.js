@@ -7,16 +7,10 @@ export const colorAdded = color => ({
     }
 });
 
-export const colorRemoved = color => ({
-    type: actions.COLOR_REMOVED,
-    payload: {
-        color: color
-    }
+export const colorRemoved = () => ({
+    type: actions.COLOR_REMOVED
 });
 
-export const colorMix = (baseColor, mixWithColor) => ({
-    type: actions.COLOR_MIX,
-    payload: {
-        color: baseColor + " " + mixWithColor
-    }
+export const colorMix = () => ({
+    type: actions.COLOR_MIX
 })

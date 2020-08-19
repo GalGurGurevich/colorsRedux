@@ -4,37 +4,38 @@ import * as actions from '../../redux/actions';
 import store from '../../redux/store';
 import { connect } from 'react-redux'
 
-function colorBoard() {
+function colorBoard(props) {
 
     return( 
         <div className="canvasBackground">
-            <button>PRESS TO MIX COLORS</button>
-            <button>PRESS TO REMOVE COLOR</button>
+            <div id="welcome">WELCOME GAL WORLD</div>
+            <button onClick={() => props.mixColors()}>PRESS TO MIX COLORS</button>
+            <button onClick={() => props.removeColor()}>PRESS TO REMOVE COLOR</button>
             <div className="container">
-                <div id="yellow">ADD YELLOW</div>
-                <div id="red">ADD RED</div>
-                <div id="blue">ADD BLUE</div>
+                <div id="yellow" onClick={() => props.addColor("yellow")}>ADD YELLOW</div>
+                <div id="red" onClick={() => props.addColor("red")}>ADD RED</div>
+                <div id="blue" onClick={() => props.addColor("blue")}>ADD BLUE</div>
             </div>
-            <div>YOU CHOSE: </div>
-            <div>MIX WITH: </div>
+            <div>YOU CHOSE: {props.colorFirst}</div>
+            <div>MIX WITH: {props.colorSecond}</div>
             <div>YOUR GET COLOR: </div>
-            <div>HISTORY MOVES: </div>
+            <div>HISTORY MOVES: {props.history}</div>
         </div>
     )
 };
 
-const mapStateToProps = (state, ownProps) => ({
-    colorFirst: state.currentMix[0] || '',
-    colorSecond: state.currentMix[1] || '',
+const mapStateToProps = (state) => ({
+    colorFirst: state.mixColors[0] || '',
+    colorSecond: state.mixColors[1] || '',
     mixColor: state.history[state.history.length - 1]
   })
 
-const mapDispatchToProps = {
-    // ... normally is an object full of action creators
-    
-  }
+const mapDispatchToProps = dispatch => ({
+    addColor(color) { dispatch(actions.colorAdded(color)); },
+    removeColor() { dispatch(actions.colorRemoved()); },
+    mixColors() { dispatch(actions.colorMix()); }
+  });
   
-  // We normally do both in one step, like this:
 export default connect(
     mapStateToProps,
     mapDispatchToProps
