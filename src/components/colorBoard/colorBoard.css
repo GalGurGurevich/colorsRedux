@@ -4,6 +4,12 @@ div {
 
 button {
     margin: 1em;
+    cursor: pointer;
+}
+
+.canvasBackground {
+    height: 100%;
+    width: 100%;
 }
 
 .container {
@@ -15,12 +21,15 @@ button {
 #blue {
     background-color: blue;
     margin: 1em;
+    cursor: pointer;
 }
 #yellow {
     background-color: yellow;
     margin: 1em;
+    cursor: pointer;
 }
 #red {
     background-color: red;
     margin: 1em;
+    cursor: pointer;
 }

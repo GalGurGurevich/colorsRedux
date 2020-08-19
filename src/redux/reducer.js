@@ -1,10 +1,5 @@
 import * as actions from './actionTypes'
 
-const space = " ";
-const purple = "purple";
-const orange = "orange";
-const green = "green";
-
 export default function reducer(state = { history: [], mixColors: [] }, action) {
     switch(action.type) {
         case actions.COLOR_ADDED: 
