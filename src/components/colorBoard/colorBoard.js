@@ -12,7 +12,9 @@ export default function colorBoard() {
                 <div id="blue">ADD BLUE</div>
             </div>
             <div>YOU CHOSE: </div>
+            <div>MIX WITH: </div>
             <div>YOUR GET COLOR: </div>
+            <div>HISTORY MOVES: </div>
         </div>
     
     )

@@ -14,9 +14,9 @@ export const colorRemoved = color => ({
     }
 });
 
-export const colorMix = (mixColor, baseColor) => ({
+export const colorMix = (baseColor, mixColor) => ({
     type: actions.COLOR_MIX,
     payload: {
-        
+        color: baseColor + mixColor
     }
 })
