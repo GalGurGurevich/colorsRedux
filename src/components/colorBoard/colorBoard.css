@@ -12,6 +12,18 @@ button {
     width: 100%;
 }
 
+.canvasBackgroundgreen {
+    background-color: green;
+}
+
+.canvasBackgroundpurple {
+    background-color: purple;
+}
+
+.canvasBackgroundorange {
+    background-color: orange;
+}
+
 .container {
     display: flex;
     align-items: center;
