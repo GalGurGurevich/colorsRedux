@@ -12,36 +12,46 @@ button {
     width: 100%;
 }
 
-.canvasBackgroundgreen {
-    background-color: green;
-}
-
-.canvasBackgroundpurple {
-    background-color: purple;
-}
-
-.canvasBackgroundorange {
-    background-color: orange;
-}
-
 .container {
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
+/*can be replace with styled component snice all props equal*/
 #blue {
-    background-color: blue;
     margin: 1em;
     cursor: pointer;
+    border: solid 2px blue;
+    color: blue;
+    border-radius: 10px;
+    height: 3em;
+    width: 4em;
+}#blue:hover {
+    background-color: blue;
+    color: white;
 }
 #yellow {
-    background-color: yellow;
     margin: 1em;
     cursor: pointer;
+    border: solid 2px yellow;
+    color: yellow;
+    border-radius: 10px;
+    height: 3em;
+    width: 4em;
+}#yellow:hover{
+    background-color: yellow;
+    color: white;
 }
 #red {
-    background-color: red;
     margin: 1em;
     cursor: pointer;
+    border: solid 2px red;
+    color: red;
+    border-radius: 10px;
+    height: 3em;
+    width: 4em;
+}#red:hover{
+    background-color: red;
+    color: white;
 }

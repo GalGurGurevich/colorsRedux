@@ -9,15 +9,12 @@ function colorBoard(props) {
     const second = props.colorSecond.color;
     let output = "";
     
-    if(first === "yellow" && second === "red") output = "orange";
-    if(first === "red" && second === "yellow") output = "orange";
-    if(first === "blue" && second === "red") output = "purple";
-    if(first === "red" && second === "blue") output = "purple";
-    if(first === "blue" && second === "yellow") output = "green";
-    if(first === "yellow" && second === "blue") output = "green";
+    if(first === "yellow" && second === "red" || first === "red" && second === "yellow") output = "orange";
+    if(first === "blue" && second === "red" || first === "red" && second === "blue") output = "purple";
+    if(first === "blue" && second === "yellow" || first === "yellow" && second === "blue") output = "green";
 
     return( 
-        <div className={'canvasBackground' + (output)}>
+        <div className={'canvasBackground'} style={{backgroundColor:output}}>
             <div id="welcome">WELCOME GAL WORLD</div>
             <button onClick={() => props.mixColors()}>PRESS TO MIX COLORS</button>
             <button onClick={() => props.removeColor()}>PRESS TO REMOVE COLOR</button>
@@ -26,8 +23,8 @@ function colorBoard(props) {
                 <div id="red" onClick={() => props.addColor("red")}>ADD RED</div>
                 <div id="blue" onClick={() => props.addColor("blue")}>ADD BLUE</div>
             </div>
-            <div>YOU CHOSE: {props.colorFirst.color}</div>
-            <div>MIX WITH: {props.colorSecond.color}</div>
+            <div>YOU CHOSE: <p style={{color:first}}>{props.colorFirst.color}</p></div>
+            <div>MIX WITH: <p style={{color:second}}>{props.colorSecond.color}</p></div>
             <div>YOUR GET COLOR: {output}</div>
             <div>HISTORY MOVES: {props.history.map((color, idx) => (<div key={idx}>{color.color}</div>))}</div>
         </div>
