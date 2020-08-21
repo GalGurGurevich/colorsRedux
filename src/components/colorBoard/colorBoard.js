@@ -1,7 +1,6 @@
 import React from 'react';
 import'./colorBoard.css';
 import * as actions from '../../redux/actions';
-import store from '../../redux/store';
 import { connect } from 'react-redux'
 
 function colorBoard(props) {
@@ -9,7 +8,7 @@ function colorBoard(props) {
     const first = props.colorFirst.color;
     const second = props.colorSecond.color;
     let output = "";
-
+    
     if(first === "yellow" && second === "red") output = "orange";
     if(first === "red" && second === "yellow") output = "orange";
     if(first === "blue" && second === "red") output = "purple";
