@@ -1,4 +1,4 @@
-import React from 'react';
+import React ,{ useEffect } from 'react';
 import'./colorBoard.css';
 import * as actions from '../../redux/actions';
 import { connect } from 'react-redux'
@@ -8,10 +8,14 @@ function colorBoard(props) {
     const first = props.colorFirst.color;
     const second = props.colorSecond.color;
     let output = "";
-    
+
     if(first === "yellow" && second === "red" || first === "red" && second === "yellow") output = "orange";
     if(first === "blue" && second === "red" || first === "red" && second === "blue") output = "purple";
     if(first === "blue" && second === "yellow" || first === "yellow" && second === "blue") output = "green";
+
+    useEffect(() => {
+        document.body.style.backgroundColor = output;
+    }, [output])
 
     return( 
         <div className={'canvasBackground'} style={{backgroundColor:output}}>
