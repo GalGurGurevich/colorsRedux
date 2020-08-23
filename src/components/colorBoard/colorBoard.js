@@ -13,10 +13,6 @@ function colorBoard(props) {
     if(first === "blue" && second === "red" || first === "red" && second === "blue") output = "purple";
     if(first === "blue" && second === "yellow" || first === "yellow" && second === "blue") output = "green";
 
-    useEffect(() => {
-        document.body.style.backgroundColor = output;
-    }, [output])
-
     return( 
         <div className={'canvasBackground'} style={{backgroundColor:output}}>
             <div id="welcome">WELCOME GAL WORLD</div>
